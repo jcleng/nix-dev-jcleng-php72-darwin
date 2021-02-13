@@ -6,13 +6,13 @@ stdenv.mkDerivation rec {
   pname = "dev-jcleng-php72-darwin";
   version = "7.2.33";
 
-  # src = fetchurl {
-  #   url = "mirror://php-7.2.0.tar.gz";
-  #   sha256 = "0ssi1wpaf7plaswqqjwigppsg5fyh99vdxx9kzl7c9lng89ndq1i";
-  # };
+  src = fetchurl {
+     url = "https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz";
+     sha256 = "7354574c7b3b1e3f56831223c7889fc8ccd2d30422a294b3bf68a450255e88ba";
+  };
   # 手动下载
   # wget https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz
-  src = ./src;
+  # src = ./src;
   # libXpm :https://github.com/NixOS/nixpkgs/commit/f34685600ec397c742a7f5048d57475d0f0b692e
   # libaio
   buildInputs = [ tree coreutils pkg-config re2c libwebp libzip xorg.libXpm bison zlib git libxml2 openssl autoconf automake libtool gcc10  pcre curl libpng libjpeg freetype gd libiconv];
