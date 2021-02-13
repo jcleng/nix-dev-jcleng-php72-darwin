@@ -1,6 +1,5 @@
-# Nix pack kangle-3.5.13.2(linux-centos7)
+# Nix pack nix-dev-jcleng-php72-darwin
 
-This is forked https://github.com/zetavg/nix-hello-world
 
 ## Build or Install in Nix Environment
 
