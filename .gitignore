@@ -1,4 +1,4 @@
 src/
-vscode/
+.vscode/
 result
 php-7.2.33.tar.gz
