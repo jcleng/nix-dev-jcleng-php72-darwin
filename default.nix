@@ -77,6 +77,6 @@ stdenv.mkDerivation rec {
     '';
     homepage = "";
     changelog = "";
-    platforms = platforms.Darwin;
+    platforms = platforms.all;
   };
 }
