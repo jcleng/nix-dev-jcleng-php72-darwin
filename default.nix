@@ -3,8 +3,13 @@ with import <nixpkgs> {}; stdenv.mkDerivation {
 
   # Source Code
   # See: https://nixos.org/nixpkgs/manual/#ssec-unpack-phase
-  src = ./src;
-
+  # wget https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz
+  # wget https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.1.13.tar.gz
+  # src = ./src;
+  src = fetchurl {
+     url = "https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz";
+     sha256 = "7354574c7b3b1e3f56831223c7889fc8ccd2d30422a294b3bf68a450255e88ba";
+  };
   # Dependencies
   # See: https://nixos.org/nixpkgs/manual/#ssec-stdenv-dependencies
   buildInputs = [ tree coreutils pkg-config re2c libwebp libzip xorg.libXpm bison zlib git libxml2 openssl autoconf automake libtool gcc10  pcre curl libpng libjpeg freetype gd libiconv];
