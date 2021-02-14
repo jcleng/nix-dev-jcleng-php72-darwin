@@ -27,6 +27,7 @@ with import <nixpkgs> {}; stdenv.mkDerivation {
 --libdir=$out/lib/php \
 --mandir=$out/php/man \
 --with-config-file-path=$out/etc \
+--with-pdo-mysql \
 --with-mhash \
 --with-openssl \
 --with-gd=${gd.dev}/include \
