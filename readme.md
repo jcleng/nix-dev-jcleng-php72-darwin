@@ -1,4 +1,4 @@
-# Nix pack nix-dev-jcleng-php72-darwin
+# Nix pack nix-dev-jcleng-php71-darwin
 
 
 ## Build or Install in Nix Environment
@@ -40,26 +40,6 @@ To see the contents of the .drv file, run: `nix show-derivation $(nix-instantiat
 # 关闭了pear，不然没有ssl证书文件，make的时候下载https会异常
 --without-pear
 
-
-
-...
-Installing man pages:             /nix/store/19lx7dbjmr7ypcijbj86v523f13pq9wp-dev-jcleng-php72-darwin-7.2.33/php/man/man1/
-  page: phpize.1
-  page: php-config.1
-Installing PEAR environment:      /nix/store/19lx7dbjmr7ypcijbj86v523f13pq9wp-dev-jcleng-php72-darwin-7.2.33/lib/php/php/
-
-Warning: fopen(): SSL operation failed with code 1. OpenSSL Error messages:
-error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in /private/tmp/nix-build-dev-jcleng-php72-darwin-7.2.33.drv-0/src/pear/fetch.php on line 66
-
-Warning: fopen(): Failed to enable crypto in /private/tmp/nix-build-dev-jcleng-php72-darwin-7.2.33.drv-0/src/pear/fetch.php on line 66
-
-Warning: fopen(https://pear.php.net/install-pear-nozlib.phar): failed to open stream: operation failed in /private/tmp/nix-build-dev-jcleng-php72-darwin-7.2.33.drv-0/src/pear/fetch.php on line 66
-
-Error..
-fopen(https://pear.php.net/install-pear-nozlib.phar): failed to open stream: operation failed
-make: *** [Makefile:499: install-pear] Error 1
-builder for '/nix/store/dhpnk2azmrgfpk03zmx9iljp377zz6j0-dev-jcleng-php72-darwin-7.2.33.drv' failed with exit code 2
-error: build of '/nix/store/dhpnk2azmrgfpk03zmx9iljp377zz6j0-dev-jcleng-php72-darwin-7.2.33.drv' failed
 ```
 
 
@@ -67,7 +47,7 @@ error: build of '/nix/store/dhpnk2azmrgfpk03zmx9iljp377zz6j0-dev-jcleng-php72-da
 
 ```shell
 # add channel
-nix-channel --add https://github.com/jcleng/nix-dev-jcleng-php72-darwin/archive/master.tar.gz dev-jcleng-php72-darwin
+nix-channel --add https://github.com/jcleng/nix-dev-jcleng-php72-darwin/archive/dev-jcleng-php71-darwin-7.1.13.tar.gz dev-jcleng-php71-darwin
 
 # use cachix binary file
 cachix use jcleng-pub
@@ -79,5 +59,5 @@ nix-channel --update
 nix-env -aqP|grep jcleng
 
 # install
-nix-env -i dev-jcleng-php72-darwin
+nix-env -i dev-jcleng-php71-darwin
 ```

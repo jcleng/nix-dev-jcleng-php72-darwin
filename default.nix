@@ -1,14 +1,13 @@
 with import <nixpkgs> {}; stdenv.mkDerivation {
-  name = "dev-jcleng-php72-darwin-7.2.33";
+  name = "dev-jcleng-php71-darwin-7.1.13";
 
   # Source Code
   # See: https://nixos.org/nixpkgs/manual/#ssec-unpack-phase
-  # wget https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz
   # wget https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.1.13.tar.gz
   # src = ./src;
   src = fetchurl {
-     url = "https://github.91chifun.workers.dev//https://github.com/php/php-src/archive/php-7.2.33.tar.gz";
-     sha256 = "7354574c7b3b1e3f56831223c7889fc8ccd2d30422a294b3bf68a450255e88ba";
+     url = "https://github.com/php/php-src/archive/php-7.1.13.tar.gz";
+     sha256 = "eaab3bed90f28e6232ee9bf5510b6533e5c1c8777542ad45db75a027cd2dbb85";
   };
   # Dependencies
   # See: https://nixos.org/nixpkgs/manual/#ssec-stdenv-dependencies
@@ -33,6 +32,7 @@ with import <nixpkgs> {}; stdenv.mkDerivation {
 --with-gd=${gd.dev}/include \
 --with-iconv=${libiconv}/ \
 --with-zlib=${zlib.dev} \
+--with-libxml-dir=${libxml2.dev} \
 --with-libzip=${libzip.dev} \
 --without-pear \
 --enable-zip \
